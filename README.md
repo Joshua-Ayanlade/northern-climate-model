@@ -13,6 +13,8 @@ The models are developed using 15 years of meterological data across 9 stations 
 - **Min/Max Inputs:** The minimum and maximum monthly average hourly values.
 - **Raw Data Inputs:** Raw hourly data of a full month, from which the model computes the necessary averages.
 
+A script is also created to reproduce one station's (Bauchi) hourly temperature and relative humidity from raw monthly averages and ranges.
+
 ---
 
 ### 🔬 Model Description
@@ -32,7 +34,14 @@ $$X_{hourly} = (\Delta t \cdot \text{Range}) + X_{min}$$
 
 ---
 
-### 📖 Functions
+### 🗂 Repository Structure
+├── README.md    
+├── hourly_generation_bauchi.py `#script reproduce Bauchi's hourly temperature and relative humidity   from raw monthly averages and ranges`   
+└── prediction_model.m `#file consist of functions which can be used to generate hourly temperature and relative humidity using either raw monthly hourly data or the minimum and maximum monthly average hourly values`  
+
+---
+
+### 📖 Functions in prediction_model.m file
 | Function | Input Type | Variable Predicted | Purpose |
 | :--- | :--- | :--- | :--- |
 | **`raw_monthly_input_model_Tdb`** | **Raw $N \times 24$ Matrix** | Dry-Bulb Temperature ($T_{db}$) | Calculates hourly $T_{db}$ distribution from raw monthly data. |
@@ -80,8 +89,9 @@ As detailed in the paper, the model was validated against existing models. Mean 
 ---
 
 ### ✉️ Contact
-K. H. Ibrahim  
+Dr. Ibrahim Hassan Kobe  
 Department of Mechanical Engineeering  
+Faculty of Engineering and Technology  
 University of Ilorin, Nigeria.  
 ibrahim.kh@unilorin.edu.ng  
 
